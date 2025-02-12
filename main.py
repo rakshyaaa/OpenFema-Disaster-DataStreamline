@@ -53,7 +53,7 @@ if __name__ == '__main__':
         database = config["database"]
 
         # Connect to the Database using create_engine from sqlAlchemy, using above parameters
-        engine = create_engine(f'mssql+pyodbc://{username}:{password}@{server}/{database}?driver=ODBC Driver 17 for SQL Server')
+        engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{server}/{database}')
         print('Created Database Engine: ' + str(engine))
 
         #create an instance of DataFetcher
@@ -61,8 +61,8 @@ if __name__ == '__main__':
     
         # Truncate exisiting tables in the database using SQL alchemy
         with engine.connect() as connection:
-            connection.execute(text("TRUNCATE TABLE DisasterDeclarations"))
-            connection.execute(text("TRUNCATE TABLE DisasterDeclarationsSummaries"))
+            connection.execute(text("TRUNCATE TABLE DBO.DisasterDeclarations"))
+            connection.execute(text("TRUNCATE TABLE DBO.DisasterDeclarationsSummaries"))
             connection.commit()
         print("Tables have been truncated")
     

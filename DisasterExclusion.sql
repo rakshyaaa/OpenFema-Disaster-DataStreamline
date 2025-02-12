@@ -6,62 +6,62 @@
 
 --------Disaster Declarations Table---------------
 
-create table fnd_website.DBO.DisasterDeclarations (
+create table DBO.DisasterDeclarations (
 disasterNumber int
-,declarationDate datetime
-,disasterName nvarchar(max)
-,incidentBeginDate datetime
-,incidentEndDate datetime
-,declarationType nvarchar(max)
-,stateCode nvarchar(max)
-,stateName nvarchar(max)
-,incidentType nvarchar(max)
-,entryDate datetime
-,updateDate datetime
-,closeoutDate datetime
+,declarationDate timestamp
+,disasterName varchar
+,incidentBeginDate timestamp
+,incidentEndDate timestamp
+,declarationType varchar
+,stateCode varchar
+,stateName varchar
+,incidentType varchar
+,entryDate timestamp
+,updateDate timestamp
+,closeoutDate timestamp
 ,region int
-,ihProgramDeclared nvarchar(max)
-,iaProgramDeclared nvarchar(max)
-,paProgramDeclared nvarchar(max)
-,hmProgramDeclared nvarchar(max)
-,designatedIncidentTypes nvarchar(max)
-,declarationRequestDate datetime
-,id nvarchar(max) 
-,hash nvarchar(max)
-,lastRefresh datetime
+,ihProgramDeclared varchar
+,iaProgramDeclared varchar
+,paProgramDeclared varchar
+,hmProgramDeclared varchar
+,designatedIncidentTypes varchar
+,declarationRequestDate timestamp
+,id varchar 
+,hash varchar
+,lastRefresh timestamp
 );
 
 ------Disaster Declarations Summary Table-------------
 
-create table fnd_website.DBO.DisasterDeclarationsSummaries (
-femaDeclarationString nvarchar(max)
+create table DBO.DisasterDeclarationsSummaries (
+femaDeclarationString varchar
 ,disasterNumber int 
-,state nvarchar(max)
-,declarationType datetime
-,declarationDate datetime
+,state varchar
+,declarationType timestamp
+,declarationDate timestamp
 ,fyDeclared int
-,incidentType nvarchar(max)
-,declarationTitle nvarchar(max)
-,ihProgramDeclared nvarchar(max)
-,iaProgramDeclared nvarchar(max)
-,paProgramDeclared nvarchar(max)
-,hmProgramDeclared nvarchar(max)
-,incidentBeginDate datetime
-,incidentEndDate datetime
-,disasterCloseoutDate datetime
-,tribalRequest nvarchar(max)
+,incidentType varchar
+,declarationTitle varchar
+,ihProgramDeclared varchar
+,iaProgramDeclared varchar
+,paProgramDeclared varchar
+,hmProgramDeclared varchar
+,incidentBeginDate timestamp
+,incidentEndDate timestamp
+,disasterCloseoutDate timestamp
+,tribalRequest varchar
 ,fipsStateCode int
 ,fipsCountyCode int
 ,placeCode int 
-,designatedArea nvarchar(max)
+,designatedArea varchar
 ,declarationRequestNumber int 
-,lastIAFilingDate datetime
+,lastIAFilingDate timestamp
 ,incidentId bigint
 ,region int 
-,designatedIncidentTypes nvarchar(max)
-,lastRefresh datetime
-,hash nvarchar(max)
-,id nvarchar(max)
+,designatedIncidentTypes varchar
+,lastRefresh timestamp
+,hash varchar
+,id varchar
 );
 
 
