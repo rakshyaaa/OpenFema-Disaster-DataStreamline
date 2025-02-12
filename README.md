@@ -1,24 +1,3 @@
-
-# Disaster Exclusion
-
-The purpose of the development was to get the areas that have been impacted by a national disaster, after it has been hit.
-Intially, I wrote this python script to analyze the OpenFema dataset, then implemented the whole process within the script.
-
-I wrote an equivalent SQL procedure using SQL OLE Automation procedures.
-
-
-## Documentation
-
-[Documentation](https://ullafayette.sharepoint.com/sites/UniversityAdvancementDeptTeam/SitePages/Disaster-Protocol-API-Script.aspx)
-
-## Installation
-
-Python should have been installed on your machine
-
-[Download the latest version of python and set up in your machine](https://www.python.org/downloads/)
-
-## Run the project and get the impacted areas by disasters
-
 Clone the project
 
 ```bash
@@ -75,11 +54,7 @@ Run the api_script.py to get the disaster information in the tables
   python api_script.py disaster_numbers.txt
 ```
 
-View Areas impacted in SQL view
 
-```bash
-  select * from dbo.DisasterImpacts;
-```
 
 
 
