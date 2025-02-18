@@ -41,24 +41,27 @@ if __name__ == '__main__':
         disaster_apiurl = 'https://www.fema.gov/api/open/v1/FemaWebDisasterDeclarations?$filter=disasterNumber in '+ api_filter_string
         disaster_declaration_summary_apiurl = 'https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?$filter=disasterNumber in '+ api_filter_string
 
+        print(disaster_apiurl, disaster_declaration_summary_apiurl)
         # Database connection parameters are read from the database_config.json file 
         with open('database_config.json', 'r') as file:
             config = json.load(file)
+            print(config)
 
         # Set database connection parameters received from the database_config.json file 
         server = config["server"]
+        port = config["port"]
         username = config["username"]
         password = config["password"]
         database = config["database"]
 
         # Connect to the Database using create_engine from sqlAlchemy, using above parameters
-        engine = create_engine(f'mssql+pyodbc://{username}:{password}@{server}/{database}?driver=ODBC Driver 17 for SQL Server')
+        engine = create_engine(f'postgresql://{username}:{password}@{server}:{port}/{database}')
         print('Created Database Engine: ' + str(engine))
     
         # Truncate exisiting tables in the database using SQL alchemy
         with engine.connect() as connection:
-            connection.execute(text("TRUNCATE TABLE DisasterDeclarations"))
-            connection.execute(text("TRUNCATE TABLE DisasterDeclarationsSummaries"))
+            connection.execute(text('TRUNCATE TABLE "DisasterDeclarations"'))
+            connection.execute(text('TRUNCATE TABLE "DisasterDeclarationsSummaries"'))
             connection.commit()
         print("Tables have been truncated")
     
