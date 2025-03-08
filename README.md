@@ -28,7 +28,7 @@ Install following dependencies on your machine
 Go to the project code directory
 
 ```bash
-  cd DisasterExlcusion
+  cd DataStreamline
 ```
 
 Add disaterNumber in the disater_numbers.txt file and save the file
@@ -45,7 +45,7 @@ Add disaterNumber in the disater_numbers.txt file and save the file
 Run the api_script.py to get the disaster information in the tables
 
 ```bash
-  python api_script.py disaster_numbers.txt
+  python main.py disaster_numbers.txt
 ```
 
 Run the api_script.py to get the disaster information in the tables
