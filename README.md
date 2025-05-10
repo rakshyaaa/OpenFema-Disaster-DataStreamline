@@ -42,17 +42,12 @@ Add disaterNumber in the disater_numbers.txt file and save the file
   4832
 ```
 
-Run the api_script.py to get the disaster information in the tables
+Run the main.py to get the disaster information in the database tables
 
 ```bash
   python main.py disaster_numbers.txt
 ```
 
-Run the api_script.py to get the disaster information in the tables
-
-```bash
-  python api_script.py disaster_numbers.txt
-```
 
 
 
