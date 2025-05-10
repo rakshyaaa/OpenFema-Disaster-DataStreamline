@@ -1,3 +1,16 @@
+# OpenFEMA Disaster DataStreamline
+
+This project provides a streamlined pipeline to extract disaster data from the [OpenFEMA API](https://www.fema.gov/openfema-data-page) using disaster numbers. When executed, the pipeline pulls data for each disaster, stores it into a SQL table, and automatically updates a database view that highlights all impacted locations for analysis or visualization.
+
+---
+
+## Key Features
+
+- Fetches FEMA disaster declaration data by `disasterNumber`
+- Stores raw data into structured SQL tables
+- Built with `pandas`, `requests`, `sqlalchemy`, and `pgeocode`
+
+
 Clone the project
 
 ```bash
